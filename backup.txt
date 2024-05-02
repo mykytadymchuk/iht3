@@ -1,0 +1,31 @@
+db
+
+show dbs
+
+use lab2
+
+show collections
+
+db.createCollection('footballTeams')
+db.footballTeams.save()
+
+load("C:\OSPanel\userdata\MongoDB-6.0-Win10\import\footballTeams.js")
+load("C:\OSPanel\userdata\MongoDB-6.0-Win10\import\footballMatches.js")
+
+db.students.update({surname:"Egorov"}, {$set:{score:100}})  // change or add
+db.students.update({surname:"Egorov"}, {$unset:{score:1}})    // delete value
+db.students.remove({surname:"Egorov"})   // delete document
+
+db.footballMatches.drop()      // drop collection
+
+db.dropDatabase()       // drop database
+
+db.users.insertMany([
+{username:"admin", password:"qwerty"}])
+
+setItem(key, value)	// add key/value
+getItem(key)		// get value by key
+key(index)		// get key by position
+clear()			// delete all key/value
+removeItem(key)		// delete certain key/value
+
